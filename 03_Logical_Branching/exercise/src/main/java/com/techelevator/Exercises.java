@@ -407,7 +407,7 @@ public class Exercises {
 	 less20(20) → false
 	 */
 	public boolean less20(int n) {
-		if(n % 20 == 1 || n % 20 ==2)
+		if(n % 20 == 18 || n % 20 ==19)
 			return true;
 		return false;
 	}
