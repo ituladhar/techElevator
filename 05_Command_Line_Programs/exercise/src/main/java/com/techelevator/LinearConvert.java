@@ -12,7 +12,7 @@ public class LinearConvert {
 		//Print the msg to the user
 		System.out.print("Please enter the length: ");
 		String userInputData = in.nextLine();
-		float lengthFromUserInput = Float.parseFloat(userInputData);
+		int lengthFromUserInput = Integer.parseInt(userInputData);
 		System.out.println();
 
 		//get Unit to measure the length
@@ -23,11 +23,11 @@ public class LinearConvert {
 		switch (userInputLengthUnit){
 			case "f": //m = f * 0.3048
 				lengthInMeter = lengthFromUserInput * 0.3048;
-				System.out.println(lengthFromUserInput + " foot " + lengthInMeter + " meter(s)."); //58f is 17m.
+				System.out.println(lengthFromUserInput + " foot " + Math.round(lengthInMeter) + " meter(s)."); //58f is 17m.
 				break;
 			case "m": // f = m * 3.2808399
 				lengthInFoot = lengthFromUserInput *  3.2808399;
-				System.out.println( lengthFromUserInput + " meter(s) " + lengthInFoot + " foot.");
+				System.out.println( lengthFromUserInput + " meter(s) " + Math.round(lengthInFoot) + " foot.");
 
 				break;
 		}
