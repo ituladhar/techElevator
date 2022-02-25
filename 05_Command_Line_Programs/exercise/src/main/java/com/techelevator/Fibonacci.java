@@ -18,7 +18,7 @@ public class Fibonacci {
 			System.out.println("0 1");
 			else{
 			System.out.print(previous);
-			while (inputNum > current){
+			while (inputNum >= current){
 				System.out.print(" "+ current);
 				int tempNum = current;
 				current = current + previous;
