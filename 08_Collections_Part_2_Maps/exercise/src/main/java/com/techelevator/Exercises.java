@@ -88,7 +88,7 @@ public class Exercises {
         String item = itemNumber.toUpperCase();
         if (!sale.containsKey(item)) return 0.00;
         else
-            return sale.get(itemNumber);
+            return sale.get(item);
 
 
     }
@@ -259,9 +259,20 @@ public class Exercises {
      *
      */
     public Map<String, Integer> last2Revisited(String[] words) {
+        Map<String, Integer> result = new HashMap<String, Integer>();
+        for (String word : words) {
+            String last2 = word.substring(word.length() - 2);
+            result.put(word, 0);
+
+            for (int i = 0; i < word.length() - 2; i++) {
+                if (word.substring(i, i + 2).equals(last2)) {
+                    result.put(word, result.get(word) + 1);
+                }
+            }
+        }
+        return result;
 
 
-        return null;
     }
 
 }
