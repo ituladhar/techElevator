@@ -84,14 +84,16 @@ public class Exercises {
         sale.put("KITCHEN6073", 0.40);
         sale.put("BEDROOM3434", 0.60);
         sale.put("BATH0073", 0.15);
-
-        String item = itemNumber.toUpperCase();
-        if (!sale.containsKey(item)) return 0.00;
+        Double result = 0.00;
+        if (itemNumber == null || itemNumber.isEmpty()) return result;
         else
-            return sale.get(item);
-
-
+            for (String key : sale.keySet()) {
+                if (itemNumber.equalsIgnoreCase(key))
+                    result = sale.get(key);
+            }
+        return result;
     }
+
 
     /*
      * Modify and return the given Map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul",
